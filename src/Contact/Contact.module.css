@@ -1,0 +1,77 @@
+.contact_form {
+    /* max-width: 900px; */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Bebas Neue', sans-serif;
+    height: 100vh;
+    border-radius: 10px;
+}
+
+.contact_form h2 {
+    font-size: 80px;
+    /* color: rgb(168, 241, 146);
+    background: rgb(149, 201, 129);
+    background: radial-gradient(circle, rgba(149, 201, 129, 1) 0%, rgba(136, 185, 119, 1) 5%, rgba(66, 97, 63, 1) 42%, rgba(56, 85, 55, 1) 63%, rgba(43, 69, 45, 1) 72%, rgba(43, 69, 45, 1) 82%); */
+    font-weight: 100;
+    padding: 0px 10px;
+    text-align: center;
+    border-radius: 80% 20% 32% 68% / 58% 22% 78% 42%;
+}
+
+.form_group {
+    max-width: 90%;
+    padding: 20px 100px;
+    margin: 0 auto;
+}
+
+.contact_form button {
+    margin: auto;
+    display: flex;
+    padding: 14px 32px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    word-spacing: 2px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    text-align: center;
+    border: transparent;
+    color: white;
+    background-color: #0A1E2B;
+    border-radius: 3px;
+    transition: .3s ease-in-out;
+}
+
+.contact_form button:hover {
+    transition: .3s ease-in-out;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    background-color: #e4e4e4;
+}
+
+.MuiFilledInput-root {
+    border-bottom: 1px solid #53af5b !important;
+}
+
+@media screen and (max-width:900px) {
+    .contact_form {
+        width: 100%;
+    }
+
+    .contact_form h2 {
+        font-size: 45px;
+        text-align: center;
+        color: rgb(88, 156, 220);
+        font-weight: 100;
+    }
+
+    .form_group {
+        width: 100%;
+    }
+
+}

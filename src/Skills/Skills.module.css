@@ -1,0 +1,11 @@
+.main_skills_add {
+    width: 100%;
+    height: 87.2vh;
+    border: 5px solid red;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+}
+
+.main_skills_add h1 {
+    font-size: 78px;
+}
