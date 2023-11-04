@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
 import transition from '../Transition'
 import style from './Skills.module.css'
 import htmllogo from '../Images/png-transparent-html5-icon-•-html-social-network-icon 1.png'
@@ -10,12 +10,38 @@ import figmalogo from '../Images/png-transparent-html5-icon-•-figma-social-net
 import muilogo from '../Images/png-transparent-html5-icon-•-mui-social-network-icon 1.png'
 import gitlogo from '../Images/png-transparent-html5-icon-•-git-social-network-icon 1.png'
 import gitlablogo from '../Images/png-transparent-html5-icon-•-gitlab-social-network-icon 1.png'
+import gsap from 'gsap'
 
-function skills() {
+function Skills() {
+
+    const h1Ref = useRef(null);
+
+    useEffect(() => {
+        const text = h1Ref.current.textContent;
+        const letters = text.split('');
+
+        h1Ref.current.textContent = '';
+
+        letters.forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.style.display = 'inline-block';
+            h1Ref.current.appendChild(span);
+
+            gsap.from(span, {
+                duration: 0.9,
+                opacity: 0,
+                y: 20,
+                delay: index * 0.1,
+            });
+        });
+    }, []);
+
+
     return (
         <Fragment>
             <div className={style.main_skills_add}>
-                <h1>Skills</h1>
+                <h1 ref={h1Ref}>Skills</h1>
                 <section className={style.services_container}>
                     <div className={style.row}>
                         <div className={style.item}>
@@ -67,4 +93,4 @@ function skills() {
         </Fragment>
     )
 }
-export default transition(skills)
+export default transition(Skills)

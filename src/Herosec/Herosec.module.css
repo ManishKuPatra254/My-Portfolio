@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
+.main_h {
+    padding: 20px 30px;
+}
+
 .main_herosection {
     font-family: 'Bebas Neue', sans-serif;
     display: grid;
@@ -12,7 +16,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    background-color: #e7f5ff;
+    border-radius: 20px;
+    /* background-color: #e7f5ff; */
     /* background-position: center;
     background-size: cover;
     background-image: url('../Images/pexels-lucas-allmann-442559.jpg'); */
@@ -33,6 +38,7 @@
 }
 
 .secondary_herosec p:nth-child(1) {
+    color: white;
     font-size: 36px;
     letter-spacing: 1.1px;
     word-spacing: 2px;
@@ -52,6 +58,7 @@
 .secondary_herosec h1 {
     font-size: 49.999px;
     word-spacing: 1px;
+    color: white;
     font-family: 'Major Mono Display', monospace;
     font-weight: 700;
 }
@@ -61,23 +68,23 @@
     padding: 14px 32px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
-    word-spacing: 2px;
-    letter-spacing: 4px;
+    word-spacing: 1px;
+    letter-spacing: 5px;
     font-weight: 500;
     line-height: 24px;
     cursor: pointer;
     text-align: center;
-    border: transparent;
-    color: white;
-    background-color: rgb(195, 55, 30);
-    border-radius: 3px;
+    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-radius: 80px;
     transition: .3s ease-in-out;
 }
 
 .btn1:hover {
     transition: .3s ease-in-out;
     color: rgb(255, 255, 255);
-    background-color: #000000;
+    background-color: transparent;
 }
 
 .hero_sec_img {

@@ -12,10 +12,9 @@
 }
 
 .contact_form h2 {
-    font-size: 80px;
-    /* color: rgb(168, 241, 146);
-    background: rgb(149, 201, 129);
-    background: radial-gradient(circle, rgba(149, 201, 129, 1) 0%, rgba(136, 185, 119, 1) 5%, rgba(66, 97, 63, 1) 42%, rgba(56, 85, 55, 1) 63%, rgba(43, 69, 45, 1) 72%, rgba(43, 69, 45, 1) 82%); */
+    font-size: 58px;
+    color: white;
+    font-family: 'Major Mono Display', monospace;
     font-weight: 100;
     padding: 0px 10px;
     text-align: center;
@@ -24,6 +23,7 @@
 
 .form_group {
     max-width: 90%;
+    color: white;
     padding: 20px 100px;
     margin: 0 auto;
 }

@@ -1,13 +1,51 @@
-import React, { Fragment, useRef, useState } from 'react'
+import React, { Fragment, useRef } from 'react'
 import style from './Contact.module.css'
 import transition from '../Transition'
-import { Button, TextField } from '@mui/material'
+import { Button, TextField, ThemeProvider, createTheme, useTheme } from '@mui/material'
 import { Grid } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import { toast, Toaster } from 'react-hot-toast';
 
+const customTheme = (outerTheme) =>
+    createTheme({
+        palette: {
+            mode: outerTheme.palette.mode,
+        },
+        components: {
+            MuiTextField: {
+                styleOverrides: {
+                    root: {
+                        '--TextField-brandBorderColor': 'white',
+                        '--TextField-brandBorderHoverColor': 'white',
+                        '--TextField-brandBorderFocusedColor': 'white',
+                        '& label.Mui-focused': {
+                            color: 'var(--TextField-brandBorderFocusedColor)',
+                        },
+                    },
+                },
+            },
+
+            MuiInput: {
+                styleOverrides: {
+                    root: {
+                        color: 'white',
+                        '&:before': {
+                            borderBottom: '2px solid var(--TextField-brandBorderColor)',
+                        },
+                        '&:hover:not(.Mui-disabled, .Mui-error):before': {
+                            borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
+                        },
+                        '&.Mui-focused:after': {
+                            borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
+                        },
+                    },
+                },
+            },
+        },
+    });
 
 const Contact = () => {
+    const outerTheme = useTheme();
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -22,7 +60,7 @@ const Contact = () => {
         toast.success('Successfully send')
     };
     const labelStyles = {
-        color: 'black',
+        color: 'white',
     }
     return (
         <Fragment>
@@ -34,29 +72,36 @@ const Contact = () => {
                         <form ref={form} onSubmit={sendEmail}>
                             <Grid container spacing={2.2}>
                                 <Grid xs={12} item>
-                                    <TextField placeholder="Enter name" label=" Name"
-                                        variant="standard"
-                                        name='user_name'
-                                        fullWidth required InputLabelProps={{
-                                            style: labelStyles,
-                                        }} />
+                                    <ThemeProvider theme={customTheme(outerTheme)}>
+                                        <TextField placeholder="Enter name" label=" Name"
+                                            variant="standard"
+                                            name='user_name'
+                                            fullWidth required InputLabelProps={{
+                                                style: labelStyles,
+                                            }} />
+                                    </ThemeProvider>
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    <TextField type="email" placeholder="Enter email" label="Email"
-                                        name='user_email'
-                                        variant="standard" fullWidth required InputLabelProps={{
-                                            style: labelStyles,
-                                        }} />
+                                    <ThemeProvider theme={customTheme(outerTheme)}>
+                                        <TextField type="email" placeholder="Enter email" label="Email"
+                                            name='user_email'
+                                            variant="standard" fullWidth required InputLabelProps={{
+                                                style: labelStyles,
+                                            }} />
+                                    </ThemeProvider>
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    <TextField label="Message" multiline rows={4} placeholder="Type your message here"
-                                        name='message'
-                                        variant="standard" fullWidth required InputLabelProps={{
-                                            style: labelStyles,
-                                        }} />
+                                    <ThemeProvider theme={customTheme(outerTheme)}>
+                                        <TextField label="Message" multiline rows={4} placeholder="Type your message here"
+                                            name='message'
+                                            variant="standard" fullWidth required InputLabelProps={{
+                                                style: labelStyles,
+                                            }} />
+                                    </ThemeProvider>
                                 </Grid>
+
                                 <Grid item xs={12}>
                                     <Button sx={{ width: '50%' }} type="submit"
                                         value='Send' onClick={sendEmail}

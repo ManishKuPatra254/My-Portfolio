@@ -16,7 +16,10 @@
 }
 
 .main_skills_add h1 {
-    font-size: 78px;
+    font-size: 58px;
+    color: white;
+    padding: 35px 15px;
+    font-family: 'Major Mono Display', monospace;
 }
 
 .services_container {

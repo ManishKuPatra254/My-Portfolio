@@ -84,7 +84,8 @@ export function Herosec() {
 
     return (
         <Fragment>
-            <div id={style.main_herosec} className={style.main_herosection}
+            <div className={style.main_h}>
+                <div id={style.main_herosec} className={style.main_herosection}
                 // style={{
                 //     backgroundImage: `url(${imageUrls[currentImageIndex]})`,
                 //     width: '100%',
@@ -92,26 +93,28 @@ export function Herosec() {
                 //     backgroundPosition:'center'
                 // }}
                 >
-                <div className={style.sub_herosection}>
-                    <div className={style.secondary_herosec}>
-                        <motion.p
-                            variants={firstPAnimation}
-                            initial="hidden"
-                            animate="visible"
-                        >Hi , I am Manish Kumar Patra</motion.p>
-                        <h1 ref={h1Ref}>Frontend Developer</h1>
-                        <motion.p
-                            variants={secondPAnimation}
-                            initial="hidden"
-                            animate="visible"
+                    <div className={style.sub_herosection}>
+                        <div className={style.secondary_herosec}>
+                            <motion.p
+                                variants={firstPAnimation}
+                                initial="hidden"
+                                animate="visible"
+                            >Hi , I am Manish Kumar Patra</motion.p>
+                            <h1 ref={h1Ref}>Frontend Developer</h1>
+                            <motion.p
+                                variants={secondPAnimation}
+                                initial="hidden"
+                                animate="visible"
 
-                        >I enjoy researching and developing new technologies, designing website with animations from different platforms. I believe that learning is a never-ending process,and I am very into new technologies which trends in web development.</motion.p>
+                            >I enjoy researching and developing new technologies, designing website with animations from different platforms. I believe that learning is a never-ending process,and I am very into new technologies which trends in web development.</motion.p>
+                        </div>
+                        <button onClick={handleNaviToContact} className={style.btn1}>Get In Touch <ArrowForwardIosIcon /></button>
                     </div>
-                    <button onClick={handleNaviToContact} className={style.btn1}>Get In Touch <ArrowForwardIosIcon /></button>
+                    <div className={style.hero_sec_img}>
+                        <img src={heroSectionImage} alt="" />
+                    </div>
                 </div>
-                <div className={style.hero_sec_img}>
-                    <img src={heroSectionImage} alt="" />
-                </div>
+
             </div>
         </Fragment>
     )
