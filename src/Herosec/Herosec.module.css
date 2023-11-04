@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Major+Mono+Display&family=Plus+Jakarta+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 .main_herosection {
     font-family: 'Bebas Neue', sans-serif;
     display: grid;
@@ -9,6 +13,9 @@
     justify-content: space-between;
     gap: 32px;
     background-color: #e7f5ff;
+    /* background-position: center;
+    background-size: cover;
+    background-image: url('../Images/pexels-lucas-allmann-442559.jpg'); */
 }
 
 .sub_herosection {
@@ -38,18 +45,15 @@
 
 .secondary_herosec p:nth-child(3) {
     font-size: 20px;
-    font-weight: 500;
-    text-transform: initial;
-    line-height: 28.333px;
     text-align: justify;
+    color: gray;
 }
 
 .secondary_herosec h1 {
-    font-size: 89.999px;
-    letter-spacing: 1.1px;
-    word-spacing: 2px;
-    line-height: 90px;
-    align-self: stretch;
+    font-size: 49.999px;
+    word-spacing: 1px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 700;
 }
 
 .btn1 {
@@ -65,20 +69,20 @@
     text-align: center;
     border: transparent;
     color: white;
-    background-color: #0A1E2B;
+    background-color: rgb(195, 55, 30);
     border-radius: 3px;
     transition: .3s ease-in-out;
 }
 
 .btn1:hover {
     transition: .3s ease-in-out;
-    font-weight: 900;
-    color: rgb(0, 0, 0);
-    background-color: #e4e4e4;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
 }
 
 .hero_sec_img {
     display: flex;
+    justify-content: space-evenly;
     border-radius: 80% 20% 32% 68% / 58% 22% 78% 42%;
     background-color: rgb(39, 61, 61);
 }
@@ -86,6 +90,7 @@
 .hero_sec_img img {
     margin: auto;
     width: 82%;
+    object-fit: cover;
     height: 70%;
     border-radius: 100% 30% 32% 68% / 22% 22% 100% 42%;
 }
@@ -97,6 +102,7 @@
         height: 100%;
         display: flex;
         align-items: center;
+        flex-direction: column;
         justify-content: center;
         /* gap: 32px; */
         background-color: #e7f5ff;
@@ -129,14 +135,9 @@
     }
 
     .secondary_herosec p:nth-child(3) {
-        /* padding: 10px; */
         font-size: 17px;
         font-weight: 500;
         line-height: 20.333px;
         text-align: justify;
-    }
-
-    .hero_sec_img img {
-        display: none;
     }
 }

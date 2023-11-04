@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import style from './Navbar.module.css'
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,6 +8,7 @@ import { Avatar } from '@mui/material';
 import logo1 from '../Images/manish patra 1.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import gsap from 'gsap';
 
 export function Navbar() {
 
@@ -21,6 +22,20 @@ export function Navbar() {
         setActiveItem(item);
     }
 
+    const navRef = useRef(null);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        const tl = gsap.timeline({ defaults: { duration: 0.3 } });
+
+        if (menuOpen) {
+            tl.to(navRef.current, { width: '100%', duration: 0.2 })
+                .to(menuRef.current, { x: 0, duration: 0.2, stagger: 0.1 });
+        } else {
+            tl.to(menuRef.current, { x: -200, duration: 0.2, stagger: -0.1 })
+                .to(navRef.current, { width: '50px', duration: 0.2 }, '-=0.2');
+        }
+    }, [menuOpen]);
 
     return (
         <Fragment>
