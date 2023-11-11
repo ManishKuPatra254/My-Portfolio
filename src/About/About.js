@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import transition from '../Transition'
+import style from './About.module.css'
 function about() {
     return (
-        <div>
-            <h1>About</h1>
-        </div>
+        <Fragment>
+            <div className={style.main_about_p}>
+                <h1>About</h1>
+            </div>
+        </Fragment>
     )
 }
 

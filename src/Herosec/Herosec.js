@@ -3,21 +3,12 @@ import style from './Herosec.module.css';
 import heroSectionImage from '../Images/manish patra 1.png'
 import { useNavigate } from 'react-router-dom';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import gsap from 'gsap';
-// import img1 from '../Images/pexels-angela-roma-7319297.jpg'
-// import img2 from '../Images/pexels-henry-&-co-2736834.jpg'
-// import img3 from '../Images/pexels-adrien-olichon-2387793 (1).jpg'
-
-// const imageUrls = [
-//     img1,
-//     img2,
-//     img3,
-// ];
-
 
 export function Herosec() {
     const navigateToContact = useNavigate();
+    const controls = useAnimation();
 
     function handleNaviToContact() {
         navigateToContact('/contact')
@@ -34,7 +25,7 @@ export function Herosec() {
         letters.forEach((letter, index) => {
             const span = document.createElement('span');
             span.textContent = letter;
-            span.style.display = 'inline-block';
+            span.style.display = 'inline';
             h1Ref.current.appendChild(span);
 
             gsap.from(span, {
@@ -44,22 +35,9 @@ export function Herosec() {
                 delay: index * 0.1,
             });
         });
-    }, []);
+        controls.start({ opacity: 1 });
+    }, [controls]);
 
-
-    // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-    // useEffect(() => {
-    //     const imageChangeTimer = setInterval(() => {
-    //         setCurrentImageIndex((prevIndex) =>
-    //             (prevIndex + 1) % imageUrls.length
-    //         );
-    //     }, 2000);
-
-    //     return () => {
-    //         clearInterval(imageChangeTimer);
-    //     };
-    // }, []);
 
     const firstPAnimation = {
         hidden: { opacity: 0 },
@@ -85,14 +63,7 @@ export function Herosec() {
     return (
         <Fragment>
             <div className={style.main_h}>
-                <div id={style.main_herosec} className={style.main_herosection}
-                // style={{
-                //     backgroundImage: `url(${imageUrls[currentImageIndex]})`,
-                //     width: '100%',
-                //     backgroundSize: 'cover',
-                //     backgroundPosition:'center'
-                // }}
-                >
+                <div id={style.main_herosec} className={style.main_herosection}>
                     <div className={style.sub_herosection}>
                         <div className={style.secondary_herosec}>
                             <motion.p
@@ -111,10 +82,14 @@ export function Herosec() {
                         <button onClick={handleNaviToContact} className={style.btn1}>Get In Touch <ArrowForwardIosIcon /></button>
                     </div>
                     <div className={style.hero_sec_img}>
-                        <img src={heroSectionImage} alt="" />
+                        <motion.img
+                            src={heroSectionImage}
+                            alt=""
+                            animate={controls}
+                            transition={{ duration: 1.9 }}
+                        />
                     </div>
                 </div>
-
             </div>
         </Fragment>
     )

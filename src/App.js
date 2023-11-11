@@ -7,13 +7,14 @@ import Skills from './Skills/Skills';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
 import { AnimatePresence } from 'framer-motion';
-import { Fragment  } from 'react';
+import { Fragment } from 'react';
 
 function App() {
   const location = useLocation();
 
 
   return (
+
     <Fragment>
       <div className="App">
         <Navbar />
@@ -28,6 +29,7 @@ function App() {
         </AnimatePresence>
       </div>
     </Fragment>
+
   );
 }
 

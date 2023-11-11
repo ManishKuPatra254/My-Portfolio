@@ -25,7 +25,7 @@ function Skills() {
         letters.forEach((letter, index) => {
             const span = document.createElement('span');
             span.textContent = letter;
-            span.style.display = 'inline-block';
+            span.style.display = 'inline';
             h1Ref.current.appendChild(span);
 
             gsap.from(span, {
