@@ -1,16 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Major+Mono+Display&family=Plus+Jakarta+Sans&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-
-
 .main_h {
     padding: 20px 30px;
 }
 
 .main_herosection {
-    font-family: 'Bebas Neue', sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 25.333px 85.333px 25.333px 85.333px;
@@ -36,9 +28,9 @@
 
 .secondary_herosec p:nth-child(1) {
     color: white;
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: 1.1px;
-    word-spacing: 2px;
+    word-spacing: 1px;
     text-align: center;
     display: flex;
     font-weight: 500;
@@ -46,19 +38,21 @@
     line-height: 42.333px;
 }
 
-.secondary_herosec p:nth-child(3) {
-    font-size: 17px;
-    text-align: justify;
+.secondary_herosec h1 {
+    font-size: 46.999px;
+    color: white;
+    font-family: var(--heading-font);
     font-weight: 700;
-    color: gray;
 }
 
-.secondary_herosec h1 {
-    font-size: 49.999px;
-    color: white;
-    font-family: 'Major Mono Display', monospace;
+.secondary_herosec p:nth-child(3) {
+    font-size: 16px;
+    text-align: justify;
     font-weight: 700;
+    color: rgb(160, 160, 160);
 }
+
+
 
 .btn1 {
     display: flex;

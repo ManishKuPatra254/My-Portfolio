@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Bebas Neue', sans-serif;
     height: 100vh;
     border-radius: 10px;
 }
@@ -14,11 +13,10 @@
 .contact_form h2 {
     font-size: 58px;
     color: white;
-    font-family: 'Major Mono Display', monospace;
+    font-family: var(--heading-font);
     font-weight: 100;
     padding: 0px 10px;
     text-align: center;
-    border-radius: 80% 20% 32% 68% / 58% 22% 78% 42%;
 }
 
 .form_group {
@@ -61,6 +59,7 @@
     }
 
     .contact_form h2 {
+        width: 100%;
         font-size: 30px;
         text-align: center;
         color: rgb(88, 156, 220);

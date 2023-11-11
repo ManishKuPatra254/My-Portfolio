@@ -73,7 +73,14 @@ const Contact = () => {
                             <Grid container spacing={2.2}>
                                 <Grid xs={12} item>
                                     <ThemeProvider theme={customTheme(outerTheme)}>
-                                        <TextField placeholder="Enter name" label=" Name"
+                                        <TextField
+                                            sx={{
+                                                width: '100%',
+                                                '@media(maxWidth:900px)': {
+                                                    width: '100%',
+                                                }
+                                            }}
+                                            placeholder="Enter name" label=" Name"
                                             variant="standard"
                                             name='user_name'
                                             fullWidth required InputLabelProps={{
