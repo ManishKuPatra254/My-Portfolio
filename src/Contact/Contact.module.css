@@ -1,13 +1,12 @@
 .contact_form {
-    /* max-width: 900px; */
     width: 100%;
-    margin: 0 auto;
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    border-radius: 10px;
+    margin-top: 50px;
+    height: auto;
 }
 
 .contact_form h2 {
@@ -20,7 +19,7 @@
 }
 
 .form_group {
-    max-width: 90%;
+    width: 90%;
     color: white;
     padding: 20px 100px;
     margin: 0 auto;
@@ -56,13 +55,13 @@
 @media screen and (max-width:900px) {
     .contact_form {
         width: 100%;
+        padding: 0;
     }
 
     .contact_form h2 {
         width: 100%;
         font-size: 30px;
         text-align: center;
-        color: rgb(88, 156, 220);
         font-weight: 100;
     }
 
@@ -76,13 +75,6 @@
         border: transparent;
         background-color: #ffffff;
         transition: .3s ease-in-out;
-    }
-
-    .contact_form button:hover {
-        border: 1px solid white;
-        transition: .3s ease-in-out;
-        color: rgb(255, 255, 255);
-        background-color: #000000;
     }
 
 }

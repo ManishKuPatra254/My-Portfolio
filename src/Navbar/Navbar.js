@@ -8,6 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import gsap from 'gsap';
 import { useAnimate, stagger } from "framer-motion";
+import CallMadeIcon from '@mui/icons-material/CallMade';
 
 
 function useMenuAnimation(isOpen) {
@@ -103,6 +104,9 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const scope = useMenuAnimation(isOpen);
 
+    // .........................
+
+
     return (
         <Fragment>
 
@@ -140,8 +144,11 @@ export function Navbar() {
                     </ul>
                 </div>
                 <div className={style.icons_ref}>
-                    <a href='https://github.com/ManishKuPatra254' target='blank'><GitHubIcon /></a>
-                    <a href='https://www.linkedin.com/in/manish-kumar-patra-10448b188/' target='blank'><LinkedInIcon /></a>
+                    <a href='https://github.com/ManishKuPatra254' target='blank'> GitHub<CallMadeIcon /></a>
+
+                    <a href='https://www.linkedin.com/in/manish-kumar-patra-10448b188/'
+                        target='blank'>
+                        LinkedIn<CallMadeIcon /></a>
                 </div>
 
                 <div className={style.ham_menu_cond} ref={scope} onClick={() => setIsOpen(!isOpen)}>

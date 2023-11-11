@@ -44,21 +44,35 @@ const customTheme = (outerTheme) =>
         },
     });
 
-const Contact = () => {
+function Contact() {
     const outerTheme = useTheme();
     const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    function sendEmail(e) {
+        const name = form.current.user_name.value.trim();
+        const email = form.current.user_email.value.trim();
+        const message = form.current.message.value.trim();
 
+        if (!name || !email || !message) {
+            toast.error('Please fill the fields')
+            return;
+        }
         emailjs.sendForm('service_5iqmjnu', 'template_tbifx9k', form.current, '5NE2Fm8c_P7gvpl2c')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
-            });
-        toast.success('Successfully send')
+                e.preventDefault();
+                toast.success('Successfully sent')
+            })
+            .catch((error) => {
+                console.log(error.text);
+                toast.error('Please fill the fields')
+            })
+        
+
     };
+
     const labelStyles = {
         color: 'white',
     }
@@ -76,9 +90,9 @@ const Contact = () => {
                                         <TextField
                                             sx={{
                                                 width: '100%',
-                                                '@media(maxWidth:900px)': {
+                                                '@media screen and (max-width: 900px)': {
                                                     width: '100%',
-                                                }
+                                                },
                                             }}
                                             placeholder="Enter name" label=" Name"
                                             variant="standard"

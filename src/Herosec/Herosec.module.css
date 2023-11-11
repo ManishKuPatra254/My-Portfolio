@@ -87,7 +87,7 @@
 
 .hero_sec_img img {
     margin: auto;
-    width: 82%;
+    width: 81%;
     object-fit: cover;
     height: 70%;
     border-radius: 100% 30% 32% 68% / 22% 22% 100% 42%;
@@ -99,6 +99,7 @@
         width: 100%;
         height: 100%;
         display: flex;
+        padding: 18px 0px;
         align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -120,7 +121,8 @@
 
     .secondary_herosec h1 {
         text-align: center;
-        font-size: 20.667px;
+        font-size: 25.667px;
+        line-height: 54px;
         align-self: center;
     }
 
@@ -131,7 +133,7 @@
     }
 
     .secondary_herosec p:nth-child(3) {
-        font-size: 17px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 20.333px;
         text-align: justify;
