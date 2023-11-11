@@ -134,8 +134,3 @@ function Projects() {
     )
 }
 export default transition(Projects)
-
-
-
-
-// <div onClick = {()=> handleClick(id)}></div>
